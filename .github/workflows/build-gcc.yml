@@ -29,11 +29,11 @@ jobs:
         git pull
 
         mkdir build
-        mkdir GCC
+        mkdir publish
 
         cd build
 
-        bash ./../gcc/configure --prefix=../GCC --enable-languages=c,c++
+        bash ./../gcc/configure --prefix=../publish --enable-languages=c,c++
         make
 
         git config --local user.email "action@github.com"
