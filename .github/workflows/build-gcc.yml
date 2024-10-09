@@ -11,10 +11,11 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - name: Install Cygwin
+    - name: Install build tools
       run: |
         choco upgrade all
         choco install cygwin
+        choco install make
 
     - name: Build GCC
       run: |
@@ -26,6 +27,7 @@ jobs:
         cd build
 
         bash ./../gcc/configure --prefix=../GCC --enable-languages=c,c++
+        make
 
         git config --local user.email "action@github.com"
         git config --local user.name "github-actions"
