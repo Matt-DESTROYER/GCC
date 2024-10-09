@@ -7,27 +7,10 @@ defaults:
     shell: bash
 
 jobs:
-  pull-gcc:
+  build-gcc:
     runs-on: windows-latest
 
     steps:
-    - uses: actions/checkout@v4
-
-    - name: Pull
-      run: |
-        rm -rf ./gcc
-        git clone git://gcc.gnu.org/git/gcc.git gcc
-
-    - name: Push
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "github-actions"
-        git add --all
-        git commit -m "Pulling gcc" -a
-        git push
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
     - name: Install Cygwin
       run: |
         choco upgrade all
@@ -36,10 +19,18 @@ jobs:
     - name: Build GCC
       run: |
         git pull
+
         mkdir build
         mkdir GCC
+
         cd build
+
         bash ./../gcc/configure --prefix=../GCC --enable-languages=c,c++
+
+        git config --local user.email "action@github.com"
+        git config --local user.name "github-actions"
         git add --all
         git commit -m "Building gcc" -a
         git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
