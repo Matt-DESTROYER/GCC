@@ -14,8 +14,11 @@ jobs:
     - name: Install build tools
       run: |
         choco upgrade all
+        choco install python
+        choco install strawberryperl
         choco install cygwin
         choco install make
+      shell: pwsh
 
     - name: Build GCC
       run: |
