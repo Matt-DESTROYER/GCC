@@ -11,8 +11,6 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - uses: actions/checkout@v4
-
     - name: Install build tools
       run: |
         choco upgrade all
@@ -24,16 +22,16 @@ jobs:
         choco install make
       shell: pwsh
 
+    - uses: actions/checkout@v4
+
     - name: Build GCC
       run: |
-        git pull
-
         mkdir build
         mkdir publish
 
         cd build
 
-        bash ./../gcc/configure --prefix=../publish --enable-languages=c,c++
+        bash ../gcc/configure --prefix=../publish --enable-languages=c,c++
         make
 
         git config --local user.email "action@github.com"
