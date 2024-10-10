@@ -13,14 +13,6 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: "Build GMP, MPFR, MPC & ISL"
-      run: bash build-gnu-reqs.sh
-
-    - name: Pull gcc
-      run: |
-        rm -rf ./gcc
-        git clone git://gcc.gnu.org/git/gcc.git gcc
-
     - name: Install build tools
       run: |
         choco upgrade all
@@ -31,6 +23,14 @@ jobs:
         choco install cygwin
         choco install make
       shell: pwsh
+
+    - name: "Build GMP, MPFR, MPC & ISL"
+      run: bash build-gnu-reqs.sh
+
+    - name: Pull gcc
+      run: |
+        rm -rf ./gcc
+        git clone git://gcc.gnu.org/git/gcc.git gcc
 
     - name: Build gcc
       run: |
