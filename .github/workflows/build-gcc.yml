@@ -13,6 +13,9 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
+    - name: "Build GMP, MPFR, MPC & ISL"
+      run: bash build-gnu-reqs.sh
+
     - name: Pull gcc
       run: |
         rm -rf ./gcc
