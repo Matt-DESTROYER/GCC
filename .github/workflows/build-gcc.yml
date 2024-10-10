@@ -16,10 +16,18 @@ jobs:
     - name: Install build tools
       run: |
         choco upgrade all
+
         choco install gzip
         choco install bzip2
+        choco install sed
+
+        choco install gawk
+        choco install gnuwin32-m4
+        choco install gnuwin
+
         choco install python
         choco install strawberryperl
+
         choco install cygwin
         choco install make
       shell: pwsh
