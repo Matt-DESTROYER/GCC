@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # GMP 6.3.0
-curl -Lo gmp-6.3.0.tar.xz https://ftp.gnu.org/gnu/gmp/gmp-6.3.1.tar.xz
+curl -Lo gmp-6.3.0.tar.xz https://ftp.gnu.org/gnu/gmp/gmp-6.3.0.tar.xz
 tar xf gmp-6.3.0.tar.xz
 rm gmp-6.3.0.tar.xz
 cd ./gmp-6.3.0
