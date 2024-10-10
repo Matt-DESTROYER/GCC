@@ -1,0 +1,44 @@
+name: Build GNU libs
+
+on: workflow_dispatch
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build-gcc:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Install build tools
+      run: |
+        choco upgrade all
+
+        choco install gzip
+        choco install bzip2
+        choco install sed
+
+        choco install python
+        choco install strawberryperl
+
+        choco install gnuwin
+        choco install cygwin
+        choco install make
+      shell: pwsh
+
+    - name: Pull
+      run: git pull
+
+    - name: Build GNU
+      run: bash build-gnu.sh
+
+    - name: Push build
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "github-actions"
+        git add --all
+        git commit -m "Build GNU" -a
+        git push origin main
