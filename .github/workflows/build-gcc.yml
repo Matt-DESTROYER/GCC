@@ -32,8 +32,8 @@ jobs:
         choco install make
       shell: pwsh
 
-    - name: "Build GMP, MPFR, MPC & ISL"
-      run: bash build-gnu-reqs.sh
+    - name: Build GNU
+      run: bash build-gnu.sh
 
     - name: Pull gcc
       run: |
