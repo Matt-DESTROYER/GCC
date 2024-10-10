@@ -1,4 +1,4 @@
-name: Build-gcc
+name: Build GCC
 
 on: workflow_dispatch
 
@@ -8,9 +8,16 @@ defaults:
 
 jobs:
   build-gcc:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
+    - uses: actions/checkout@v4
+
+    - name: Pull gcc
+      run: |
+        rm -rf ./gcc
+        git clone git://gcc.gnu.org/git/gcc.git gcc
+
     - name: Install build tools
       run: |
         choco upgrade all
@@ -22,9 +29,7 @@ jobs:
         choco install make
       shell: pwsh
 
-    - uses: actions/checkout@v4
-
-    - name: Build GCC
+    - name: Build gcc
       run: |
         mkdir build
         mkdir publish
@@ -34,6 +39,8 @@ jobs:
         bash ../gcc/configure --prefix=../publish --enable-languages=c,c++
         make
 
+    - name: Push build
+      run: |
         git config --local user.email "action@github.com"
         git config --local user.name "github-actions"
         git add --all
