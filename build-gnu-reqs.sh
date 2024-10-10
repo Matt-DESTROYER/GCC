@@ -1,5 +1,15 @@
 #!/bin/bash
 
+# M4 1.4
+curl -Lo m4-1.4.tar.xz https://ftp.gnu.org/gnu/m4/m4-1.4.tar.gz
+tar xf m4-1.4.tar.xz
+rm m4-1.4.tar.xz
+cd ./m4-1.4
+./configure
+make
+make install
+cd ../
+
 # GMP 6.3.0
 curl -Lo gmp-6.3.0.tar.xz https://ftp.gnu.org/gnu/gmp/gmp-6.3.0.tar.xz
 tar xf gmp-6.3.0.tar.xz
