@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # M4 1.4
-curl -Lo m4-1.4.tar.xz https://ftp.gnu.org/gnu/m4/m4-1.4.tar.gz
-tar xf m4-1.4.tar.xz
-rm m4-1.4.tar.xz
+curl -Lo m4-1.4.tar.gz https://ftp.gnu.org/gnu/m4/m4-1.4.tar.gz
+tar xf m4-1.4.tar.gz
+rm m4-1.4.tar.gz
 cd ./m4-1.4
 ./configure
 make
