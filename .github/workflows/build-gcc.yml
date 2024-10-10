@@ -21,13 +21,10 @@ jobs:
         choco install bzip2
         choco install sed
 
-        choco install gawk
-        choco install gnuwin32-m4
-        choco install gnuwin
-
         choco install python
         choco install strawberryperl
 
+        choco install gnuwin
         choco install cygwin
         choco install make
       shell: pwsh
