@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # GMP 6.3.0
-curl -Lo gmp-6.3.0.tar.xz https://gmplib.org/download/gmp/gmp-6.3.0.tar.xz
+curl -Lo gmp-6.3.0.tar.xz https://ftp.gnu.org/gnu/gmp/gmp-6.3.1.tar.xz
 tar xf gmp-6.3.0.tar.xz
 rm gmp-6.3.0.tar.xz
 cd ./gmp-6.3.0
@@ -11,7 +11,7 @@ make install
 cd ../
 
 # MPFR 4.2.1
-curl -Lo mpfr-4.2.1.tar.xz https://www.mpfr.org/mpfr-current/mpfr-4.2.1.tar.xz
+curl -Lo mpfr-4.2.1.tar.xz https://ftp.gnu.org/gnu/mpfr/mpfr-4.2.1.tar.xz
 tar xf mpfr-4.2.1.tar.xz
 rm mpfr-4.2.1.tar.xz
 cd ./mpfr-4.2.1
