@@ -33,7 +33,11 @@ jobs:
       run: |
         cd gcc
         bash ./configure --prefix=/build --enable-languages=c,c++
+        cd build
         make
+        cd ../../
+        mv ./gcc/build ./
+        rm -rf ./gcc
 
     - name: Push build
       run: |
