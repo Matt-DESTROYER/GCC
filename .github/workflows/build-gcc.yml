@@ -31,12 +31,8 @@ jobs:
 
     - name: Build gcc
       run: |
-        mkdir build
-        mkdir publish
-
-        cd build
-
-        bash ../gcc/configure --prefix=../publish --enable-languages=c,c++
+        cd gcc
+        bash ./configure --prefix=/build --enable-languages=c,c++
         make
 
     - name: Push build
