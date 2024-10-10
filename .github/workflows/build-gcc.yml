@@ -29,23 +29,14 @@ jobs:
         choco install make
       shell: pwsh
 
-    - name: Build GNU
-      run: bash build-gnu.sh
-
     - name: Pull gcc
       run: |
+        git rm ./gcc
         rm -rf ./gcc
-        git clone git://gcc.gnu.org/git/gcc.git gcc
+        git clone git://gcc.gnu.org/git/gcc.git
 
     - name: Build gcc
-      run: |
-        cd gcc
-        bash ./configure --prefix=/build --enable-languages=c,c++
-        cd build
-        make
-        cd ../../
-        mv ./gcc/build ./
-        rm -rf ./gcc
+      run: bash ./build-gcc.sh
 
     - name: Push build
       run: |
