@@ -14,26 +14,14 @@ jobs:
     - uses: actions/checkout@v4
 
     - name: Install build tools
-      run: |
-        choco upgrade all
-
-        choco install gzip
-        choco install bzip2
-        choco install sed
-
-        choco install python
-        choco install strawberryperl
-
-        choco install gnuwin
-        choco install cygwin
-        choco install make
+      run: bash ./build-tools.sh
       shell: pwsh
 
     - name: Pull
       run: git pull
 
     - name: Build GNU
-      run: bash build-gnu.sh
+      run: bash ./build-gnu.sh
 
     - name: Push build
       run: |
