@@ -7,6 +7,7 @@ rm m4-1.4.tar.gz
 cd ./m4-1.4
 bash ../Windows-clean-files.sh
 ./configure
+make clean
 make
 make install
 cd ../
@@ -18,6 +19,7 @@ rm gmp-6.3.0.tar.xz
 cd ./gmp-6.3.0
 bash ../Windows-clean-files.sh
 ./configure
+make clean
 make
 make install
 cd ../
@@ -29,6 +31,7 @@ rm mpfr-4.2.1.tar.xz
 cd ./mpfr-4.2.1
 bash ../Windows-clean-files.sh
 ./configure --with-gmp=../gmp-6.3.0
+make clean
 make
 make install
 cd ../
@@ -40,6 +43,7 @@ rm mpc-1.3.1.tar.gz
 cd ./mpc-1.3.1
 bash ../Windows-clean-files.sh
 ./configure --with-gmp=../gmp-6.3.0 --with-mpfr=../mpfr-4.2.1
+make clean
 make
 make install
 cd ../
@@ -51,6 +55,7 @@ rm isl-0.27.tar.xz
 cd ./isl-0.27
 bash ../Windows-clean-files.sh
 ./configure --with-gmp=../gmp-6.3.0 --with-mpfr=../mpfr-4.2.1 --with-mpc=../mpc-1.3.1
+make clean
 make
 make install
 cd ../
