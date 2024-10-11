@@ -1,3 +1,5 @@
+wsl --install
+
 choco upgrade all
 
 choco install gzip
