@@ -14,14 +14,15 @@ jobs:
     - uses: actions/checkout@v4
 
     - name: Install build tools
-      run: bash ./build-tools.sh
+      run: ./build-tools.ps1
       shell: pwsh
 
     - name: Pull
       run: git pull
 
     - name: Build GNU
-      run: bash ./build-gnu.sh
+      run: ./build-gnu.ps1
+      shell: pwsh
 
     - name: Push build
       run: |
