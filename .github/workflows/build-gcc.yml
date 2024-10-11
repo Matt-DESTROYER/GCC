@@ -19,7 +19,6 @@ jobs:
 
     - name: Pull gcc
       run: |
-        git rm ./gcc
         rm -rf ./gcc
 
         rm -rf m4-1.4
