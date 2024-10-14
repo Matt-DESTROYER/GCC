@@ -21,8 +21,7 @@ jobs:
       run: git pull
 
     - name: Build GNU
-      run: build-gnu.ps1
-      shell: pwsh
+      run: bash build-gnu.sh
 
     - name: Push build
       run: |
