@@ -28,16 +28,16 @@ configure:1076:1: warning: incompatible implicit declaration of built-in functio
  1076 | exit (0); }
       | ^~~~
 configure:1076:1: note: include '<stdlib.h>' or provide a declaration of 'exit'
-C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: C:\Users\RUNNER~1\AppData\Local\Temp\ccES4m3f.o: in function `t':
+C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: C:\Users\RUNNER~1\AppData\Local\Temp\ccGzvkDm.o: in function `t':
 D:\a\GCC\GCC\m4-1.4/configure:1185: undefined reference to `sigaction'
 collect2.exe: error: ld returned 1 exit status
-C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: C:\Users\RUNNER~1\AppData\Local\Temp\ccq2H1hm.o: in function `t':
+C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: C:\Users\RUNNER~1\AppData\Local\Temp\ccgAWzwL.o: in function `t':
 D:\a\GCC\GCC\m4-1.4/configure:1185: undefined reference to `sigaltstack'
 collect2.exe: error: ld returned 1 exit status
-C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: C:\Users\RUNNER~1\AppData\Local\Temp\ccMnLAUH.o: in function `t':
+C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: C:\Users\RUNNER~1\AppData\Local\Temp\cc28vCv0.o: in function `t':
 D:\a\GCC\GCC\m4-1.4/configure:1185: undefined reference to `sigstack'
 collect2.exe: error: ld returned 1 exit status
-C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: C:\Users\RUNNER~1\AppData\Local\Temp\ccwTZjc1.o: in function `t':
+C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: C:\Users\RUNNER~1\AppData\Local\Temp\ccyr9acj.o: in function `t':
 D:\a\GCC\GCC\m4-1.4/configure:1185: undefined reference to `sigvec'
 collect2.exe: error: ld returned 1 exit status
 configure:1221:10: fatal error: alloca.h: No such file or directory
