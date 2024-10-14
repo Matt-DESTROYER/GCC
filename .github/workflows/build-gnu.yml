@@ -7,14 +7,14 @@ defaults:
     shell: bash
 
 jobs:
-  build-gcc:
+  build-gnu:
     runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v4
 
     - name: Install build tools
-      run: ./build-tools.ps1
+      run: .\build-tools.ps1
       shell: pwsh
 
     - name: Pull
