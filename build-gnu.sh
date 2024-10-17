@@ -13,6 +13,19 @@ make
 make install
 cd ../
 
+# libiconv 1.17
+rm -rf libiconv-1.17
+curl -Lo libiconv-1.17.tar.gz https://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.17.tar.gz >/dev/null
+tar xf libiconv-1.17.tar.gz
+rm libiconv-1.17.tar.gz
+cd ./libiconv-1.17
+bash ../Windows-clean-files.sh >/dev/null
+./configure --with-m4=../m4-1.4
+make clean
+make
+make install
+cd ../
+
 # GMP 6.3.0
 rm -rf gmp-6.3.0
 curl -Lo gmp-6.3.0.tar.xz https://ftp.gnu.org/gnu/gmp/gmp-6.3.0.tar.xz >/dev/null
