@@ -27,7 +27,6 @@ make install
 cd ../
 
 # gettext
-https://ftp.gnu.org/pub/gnu/gettext/gettext-0.22.5.tar.gz
 rm -rf gettext-0.22.5
 curl -Lo gettext-0.22.5.tar.gz https://ftp.gnu.org/pub/gnu/gettext/gettext-0.22.5.tar.gz >/dev/null
 tar xf gettext-0.22.5.tar.gz
