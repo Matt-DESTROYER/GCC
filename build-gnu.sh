@@ -26,6 +26,28 @@ make
 make install
 cd ../
 
+# gettext
+https://ftp.gnu.org/pub/gnu/gettext/gettext-0.22.5.tar.gz
+rm -rf gettext-0.22.5
+curl -Lo gettext-0.22.5.tar.gz https://ftp.gnu.org/pub/gnu/gettext/gettext-0.22.5.tar.gz >/dev/null
+tar xf gettext-0.22.5.tar.gz
+rm gettext-0.22.5.tar.gz
+cd ./gettext-0.22.5
+bash ../Windows-clean-files.sh >/dev/null
+./configure --with-m4=../m4-1.4 --with-libiconv=../libiconv-1.17
+make clean
+make
+make install
+cd ../
+
+# rebuild libiconv (because of circular dependency)
+cd ./libiconv-1.17
+./configure --with-m4=../m4-1.4 --with-gettext=../gettext-0.22.5
+make clean
+make
+make install
+cd ../
+
 # GMP 6.3.0
 rm -rf gmp-6.3.0
 curl -Lo gmp-6.3.0.tar.xz https://ftp.gnu.org/gnu/gmp/gmp-6.3.0.tar.xz >/dev/null
